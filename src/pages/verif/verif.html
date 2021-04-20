@@ -1,0 +1,63 @@
+<ion-content scrollY='false' style='z-index : 0; position : absolute;'>
+  <ion-slides autoplay='2000' effect='fade' loop='true' speed='3000' >
+    <ion-slide>
+      <ion-card style='margin 0; padding : 0;'>
+        <img src="assets/img/login1.jpg" style='width : 100vw; height : 100vh; background-size : cover;'>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <img src="assets/img/login2.jpg" style='width : 100vw; height : 100vh; background-size : cover;'>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <img src="assets/img/login3.jpg" style='width : 100vw; height : 100vh; background-size : cover;'>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+<ion-content padding class="animated fadeIn login auth-page" style='background :rgba(0,0,0,0.8);'>
+  <div class="login-content" style='margin-top : 20vh'>
+
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+      <h2 ion-text class="text-primary" style='color : white'>
+        <strong>SO-LA Locator</strong> Login Page
+      </h2>
+    </div>
+
+    <!-- Login form -->
+    
+      <ion-item style='color : white; border : white'>
+        <ion-label style='margin-top : 0;' floating>
+          <ion-icon name="md-key" item-start class="text-primary"></ion-icon>
+          Kode Aktivasi
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="number_input"></ion-input>
+      </ion-item>
+
+     
+    <p style='display : none' text-right ion-text color="secondary" tappable (click)="forgotPass()"><strong>Forgot Password?</strong></p>
+      <br>
+    <div>
+      <button ion-button icon-start block color="dark" tappable (click)="activate()">
+        <ion-icon name="log-in"></ion-icon>
+        Aktivasi
+      </button>
+
+    
+
+    
+
+    </div>
+
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span ion-text color="secondary" tappable (click)="register()">Belum menerima email kode? <strong>Kirim ulang</strong></span>
+    </div>
+
+  </div>
+</ion-content>

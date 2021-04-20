@@ -1,0 +1,199 @@
+ion-card {
+  margin : 0;
+  padding : 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+
+*{
+  font-family: 'Exo', sans-serif;
+}
+.card {
+  margin : 0;
+  padding : 0;
+  width : 100vw;
+}
+
+page-createaccount {
+
+  @keyframes status {
+    0% { top : -10vh;}
+    10% { top : 5vh;}
+    95% { top : 5vh; }
+    100% { top : -10vh; }
+  }
+  
+  @keyframes status2{
+    0% { top : -10vh;}
+    10% { top : 5vh;}
+    95% { top : 5vh; }
+    100% { top : -10vh; }
+  }
+
+  ion-card {
+    margin : 0;
+    padding : 0;
+  }
+  
+    ion-modal {
+      @media (min-height: 500px) {
+          ion-backdrop {
+              visibility: visible;
+          }
+      }
+      position: absolute;
+      top: 1;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: $z-index-overlay;
+      display: flex;
+  
+      align-items: center;
+      justify-content: center;
+  
+      contain: strict;
+  
+      .modal-wrapper {
+          &,
+          .ion-page,
+          .ion-page .content,
+          .ion-page .content .scroll-content {
+              contain: content;
+              position: relative;
+              top: auto;
+              left: auto;
+              padding: 1px;
+  
+          }
+  
+          z-index: $z-index-overlay-wrapper;
+          display: flex;
+          overflow: hidden;
+          flex-direction: column;
+          min-width: $alert-min-width;
+          max-height: $alert-max-height;
+          opacity: 0;
+          height: auto;
+          /*
+          max-width: $alert-md-max-width;
+          */
+          max-width:600px;
+          border-radius: $alert-md-border-radius;
+          background-color: $alert-md-background-color;
+          box-shadow: $alert-md-box-shadow;
+          border-radius: 5px;
+          padding: 5px;
+  
+          .ion-page .content {
+              background-color: color($colors, light);
+  
+          }
+  
+          .ion-page{
+              overflow-y: auto;
+          }
+      }
+  }
+  
+    .create_account_wrapper{
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      .create_account_top{
+        width: 100%;
+        height:calc(100% - 440px);
+      }
+      .create_account_content{
+        height: 440px;
+        .top_btn_bay{
+          position: absolute;
+          top: 0px;
+          text-align: center;
+          left:0px;
+          right:0px;
+        }
+        .close_arrow{
+          background: #13a89d;
+          color: #fff;
+          text-align: center;
+          font-size: 20px;
+          width: 60px;
+          height: 40px;
+          margin: 0 auto;
+          position: relative;
+          bottom: 40px;
+          padding: 10px;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+        background: #ffffff;
+        position: absolute;
+        bottom: 0px;
+        left:0px;
+        right:0px;
+        width: 100%;
+        padding-top:10px;
+        .create_account_container{
+          width:80%;
+          margin:0 auto;
+          .item {
+            .item-inner{
+              padding-top: 10px !important;
+              padding-bottom: 10px !important;
+              .input-wrapper{
+                .input {
+                  .text-input{
+                    height: 100%;
+                    font-size: 28px;
+                    &::placeholder{
+                      color: #baccdc;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .checkbox_custom{
+            .checkbox {
+              margin-right:10px;
+              .checkbox-icon{
+                width:20px;
+                height:20px;
+                border:2px solid #0e76bc;
+                border-radius:5px;
+              }
+              .checkbox-checked{
+                background: #0e76bc;
+                .checkbox-inner{
+                  top: 2px !important;
+                  left: 5px !important;
+                }
+              }
+            }
+            .item-inner{
+              border:none;
+              .label{
+                color: #989898;
+                a{
+                  color: #0e76bc;
+                }
+              }
+            }
+          }
+          .create_btn{
+            height:45px;
+            width:100%;
+            background: linear-gradient(to right,#0e91bc , #0e76bc);
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+            border-radius:0px;
+          }
+        }
+      }
+    }
+  }
+  
+  

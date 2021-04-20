@@ -1,0 +1,215 @@
+page-akun {
+    h6{
+        font-weight : bold;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .background {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      
+        mask-image: radial-gradient(
+          white 0%,
+          white 30%,
+          transparent 80%,
+          transparent
+        );
+      }
+      
+      .circle-container {
+        $particleNum: 200;
+        $particleColor: hsl(180, 100%, 80%);
+      
+        position: absolute;
+        transform: translateY(-10vh);
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      
+        .circle {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          mix-blend-mode: screen;
+          background-image: radial-gradient(
+            hsl(180, 100%, 80%),
+            hsl(180, 100%, 80%) 10%,
+            hsla(180, 100%, 80%, 0) 56%
+          );
+      
+          animation: fadein-frames 200ms infinite, scale-frames 2s infinite;
+      
+          @keyframes fade-frames {
+            0% {
+              opacity: 1;
+            }
+      
+            50% {
+              opacity: 0.7;
+            }
+      
+            100% {
+              opacity: 1;
+            }
+          }
+      
+          @keyframes scale-frames {
+            0% {
+              transform: scale3d(0.4, 0.4, 1);
+            }
+      
+            50% {
+              transform: scale3d(2.2, 2.2, 1);
+            }
+      
+            100% {
+              transform: scale3d(0.4, 0.4, 1);
+            }
+          }
+        }
+      
+        $particleBaseSize: 8;
+      
+        
+        @for $i from 1 through $particleNum {
+          &:nth-child(#{$i}) {
+            $circleSize: random($particleBaseSize);
+            width: $circleSize + px;
+            height: $circleSize + px;
+      
+            $startPositionY: random(10) + 100;
+            $framesName: "move-frames-" + $i;
+            $moveDuration: 28000 + random(9000) + ms;
+      
+            animation-name: #{$framesName};
+            animation-duration: $moveDuration;
+            animation-delay: random(37000) + ms;
+      
+            @keyframes #{$framesName} {
+              from {
+                transform: translate3d(
+                  #{random(100) + vw},
+                  #{$startPositionY + vh},
+                  0
+                );
+              }
+      
+              to {
+                transform: translate3d(
+                  #{random(100) + vw},
+                  #{- $startPositionY - random(30) + vh},
+                  0
+                );
+              }
+            }
+      
+            .circle {
+              animation-delay: random(4000) + ms;
+            }
+          }
+        }
+      }
+      
+      .message {
+        position: absolute;
+        right: 20px;
+        bottom: 10px;
+        color: white;
+        font-family: "Josefin Slab", serif;
+        line-height: 27px;
+        font-size: 18px;
+        text-align: right;
+        pointer-events: none;
+        animation: message-frames 1.5s ease 5s forwards;
+        opacity: 0;
+        
+        @keyframes message-frames {
+          from {
+            opacity: 0;
+          }
+          
+          to {
+            opacity: 1;
+          }
+        }
+      }
+      
+    ion-content {
+  
+        position: relative;
+        height: 100%;
+        width: 100%;
+    
+        ion-button {
+            margin-top: 1em;
+            margin-bottom: 1em
+        }
+    }
+    
+    ion-toolbar {
+        --background: transparent;
+    }
+    
+    ion-chip {
+        --background: #9dc912;
+        --color: #fff;
+    }
+    
+    .card {
+        margin: 0 auto;
+    
+        .header {
+            height: 100px; // 20vh;
+    
+            .avatar {
+                width: 160px; //40vw
+                height: 160px;
+                position: relative;
+                margin: 0 auto;
+    
+                img {
+                    display: block;
+                    border-radius: 50%;
+                    position: absolute;
+                    bottom: calc(-1*(80px + 4px)); // -42px;
+                    border: 8px solid #9Dc912;
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+    
+    .card-body {
+        background-color: #ffffff;
+        padding: 20px;
+        height: calc(100vh - (100px + 56px));
+        overflow: hidden;
+    
+        .user-meta {
+            padding-top: 40px;
+    
+            .playername {
+                font-size: 24px;
+                font-weight: 600;
+                color: #303940;
+            }
+    
+            .country {
+                font-size: 90%;
+                color: #949ea6;
+                text-transform: uppercase;
+                margin: 0 auto;
+            }
+        }
+    }
+}

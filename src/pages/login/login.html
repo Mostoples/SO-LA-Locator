@@ -1,0 +1,79 @@
+<ion-content scrollY='false' style='z-index : 0; position : absolute;'>
+  <ion-slides autoplay='2000' effect='fade' loop='true' speed='3000' >
+    <ion-slide>
+      <ion-card style='margin 0; padding : 0;'>
+        <img src="assets/img/login1.jpg" style='width : 100vw; height : 100vh; background-size : cover;'>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <img src="assets/img/login2.jpg" style='width : 100vw; height : 100vh; background-size : cover;'>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <img src="assets/img/login3.jpg" style='width : 100vw; height : 100vh; background-size : cover;'>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+<ion-content padding class="animated fadeIn login auth-page" style='background : rgba(0,0,0,0.5);'>
+  <div id='status' style='width : auto; height : 50px; background : rgba(0,255,255,0.2); z-index: 1000; position : absolute; top: -10vh; left : 0; right : 0; margin-left : 4vw; margin-right : 4vw; border-radius : 20px; animation-name : none; animation-duration: 5s; animation-iteration-count: 1;'>
+    <ion-label style='margin-top : 10px;'>
+      <h6 ion-text class="text-primary" style='font-weight: normal; text-align : center; color : white'>
+        Pendaftaran berhasil <br>
+          silakan login untuk aktivasi akun
+      </h6>
+    </ion-label>
+  </div>
+  <div id='status2' style='width : auto; height : 50px; background : rgba(0,255,255,0.2); z-index: 1000; position : absolute; top: -10vh; left : 0; right : 0; margin-left : 4vw; margin-right : 4vw; border-radius : 20px; animation-name : none; animation-duration: 5s; animation-iteration-count: 1;'>
+    <ion-label style='margin-top : 10px;'>
+      <h6 ion-text class="text-primary" style='font-weight: normal; text-align : center; color : white'>
+        Tidak bisa masuk<br>
+          masukan email dan password yang benar
+      </h6>
+    </ion-label>
+  </div>
+  <div class="login-content" style='box-radius : 50px; margin-top : 20vh;'>
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+      <h2 ion-text class="text-primary" style='color : white'>
+        <strong>SO-LA Locator</strong> <br> Login
+      </h2>
+    </div>
+
+    <!-- Login form -->
+    
+      <ion-item style='color : white; border : white'>
+        <ion-label floating>
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          E-mail
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="username_input"></ion-input>
+      </ion-item>
+
+      <ion-item style='color : white; border : white'>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          Password
+        </ion-label>
+        <ion-input type="password" [(ngModel)]="password_input"></ion-input>
+      </ion-item>
+
+    <p style='display : none' text-right ion-text color="secondary" tappable (click)="forgotPass()"><strong>Forgot Password?</strong></p>
+      <br>
+    <div>
+      <button ion-button icon-start block color="dark" tappable (click)="login()">
+        <ion-icon name="log-in"></ion-icon>
+        Masuk
+      </button>
+    </div>
+
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span ion-text color="secondary" tappable (click)="register()">Belum punya akun? <strong>Daftar</strong></span>
+    </div>
+  </div>
+</ion-content>

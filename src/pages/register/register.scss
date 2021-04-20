@@ -1,0 +1,38 @@
+page-register {
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    @keyframes status {
+        0% { top : -10vh;}
+        10% { top : 5vh;}
+        95% { top : 5vh; }
+        100% { top : -10vh; }
+      }
+      
+      @keyframes status2{
+        0% { top : -10vh;}
+        10% { top : 5vh;}
+        95% { top : 5vh; }
+        100% { top : -10vh; }
+      }
+    
+    ion-content {
+        background: linear-gradient(-45deg, #16106b, #0b5d79, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient 5s ease infinite;
+    }
+
+    ion-label {
+        color : white;
+    }
+
+}

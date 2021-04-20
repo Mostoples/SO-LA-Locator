@@ -1,0 +1,89 @@
+<!-- -->
+<ion-content padding class="animated fadeIn login auth-page" style=''>
+  <div style='position : absolute; top : 0; left : 0; right: 0; bottom : 0; width : auto; height : auto; background : rgba(0,0,0,0.7)'>
+    <div id='status' style='width : auto; height : 50px; background : rgba(0,255,255,0.2); z-index: 1000; position : absolute; top: -10vh; left : 0; right : 0; margin-left : 4vw; margin-right : 4vw; border-radius : 20px; animation-name : none; animation-duration: 5s; animation-iteration-count: 1;'>
+      <ion-label style='margin-top : 10px;'>
+        <h6 ion-text class="text-primary" style='font-weight: normal; text-align : center; color : white'>
+          Data anda sedang diproses.... <br>
+            tunggu sebentar
+        </h6>
+      </ion-label>
+    </div>
+  
+  <div class="login-content" style='margin : 20px; margin-top : 80px'>
+
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+      <h2 ion-text class="text-primary" style='color : white'>
+        <strong>SO-LA Locator</strong> Login Page
+      </h2>
+    </div>
+
+    <!-- Login form -->
+    
+    <ion-item style='color : white; border : white'>
+      <ion-label floating style='color : white;'>
+        <ion-icon name="person" item-start class="text-primary"></ion-icon>
+        Nama Lengkap
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="fullname_input"></ion-input>
+    </ion-item>
+    
+      <ion-item style='color : white; border : white'>
+       
+        <ion-label floating style='color : white;'>
+          <a id='emailWarn' style='color : red; display : none'>E-mail has been used</a>
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          E-mail
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="username_input"></ion-input>
+      </ion-item>
+
+      <ion-item style='color : white; border : white'>
+        <ion-label floating style='color : white;'>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          Password
+        </ion-label>
+        <ion-input type="password" [(ngModel)]="password_input"></ion-input>
+      </ion-item>
+      
+      <ion-item style='color : white; border : white'>
+        <ion-label floating style='color : white;'>
+          <a id='warningPassword' style='color : red; display : none'>Password not match</a>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          Konfirmasi Password
+        </ion-label>
+        <ion-input type="password" [(ngModel)]="password_confirmation_input"></ion-input>
+      </ion-item>
+
+      <br>
+      <a id='ceklist' style='color : red; display : none'>Mohon diceklist</a>
+      <ion-item class="checkbox_custom">
+          <ion-label style='color : white'>Saya menyetujui kebijakan privasi dan perjanjian yang ada</ion-label>
+          <ion-checkbox (ionChange)="checked()"></ion-checkbox>
+      </ion-item>
+      
+
+    <p style='display : none' text-right ion-text color="secondary" tappable (click)="forgotPass()"><strong>Lupa Password?</strong></p>
+      <br>
+    <div>
+      <button ion-button icon-start block color="dark" tappable (click)="register()">
+        <ion-icon name="log-in"></ion-icon>
+        DAFTAR
+      </button>
+
+    
+
+    
+
+    </div>
+
+
+    <div text-center margin-top>
+      <span ion-text color="secondary" tappable (click)="login()">Sudah punya akun ? <strong>Masuk</strong></span>
+    </div>
+
+  </div>
+</div>
+</ion-content>
